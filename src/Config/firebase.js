@@ -3,7 +3,7 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyATWeeE_iJ5eQ5LXE8kEpW4ucKg_r3YoXc",
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY, 
     authDomain: "notisphere-da641.firebaseapp.com",
     projectId: "notisphere-da641",
     storageBucket: "notisphere-da641.firebasestorage.app",
