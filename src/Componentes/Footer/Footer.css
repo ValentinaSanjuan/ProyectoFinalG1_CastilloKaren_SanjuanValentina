@@ -1,0 +1,227 @@
+/* ====== ESTILOS GLOBALES ====== */
+/* Reinicia márgenes, rellenos y define fuente general para toda la página */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+
+/* ====== ESTILOS PRINCIPALES DEL FOOTER ====== */
+.footer-elegant {
+    /* Fondo con degradado radial azul oscuro */
+    background: radial-gradient(circle at top left, #11214d, #0a1638 60%);
+    color: #dfe6ff;
+    padding-top: 2rem;
+    position: sticky;
+    overflow: hidden;
+    /* Sombra y borde superior */
+    box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.45);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: -1;
+}
+
+/* ====== EFECTO DE ILUMINACIÓN SUAVE EN EL FONDO ====== */
+.footer-elegant::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(77,163,255,0.25), transparent 70%);
+    filter: blur(100px);
+    z-index: 0;
+    animation: shimmer 8s infinite alternate;
+}
+
+/* Animación del brillo de fondo */
+@keyframes shimmer {
+    0% { transform: translate(0, 0); opacity: 0.5; }
+    100% { transform: translate(200px, 100px); opacity: 0.7; }
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ====== SECCIÓN SUPERIOR DEL FOOTER ====== */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem 0;
+    gap: 2rem;
+}
+
+/* Marca y logotipo */
+.footer-brand {
+    max-width: 500px;
+}
+
+/* Configuración del logotipo */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ícono dentro del logotipo */
+.footer-logo i {
+    color: #5ca8ff;
+    font-size: 1.7rem;
+    text-shadow: 0 0 12px rgba(77,163,255,0.7);
+    transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* Efecto hover en el logotipo */
+.footer-logo:hover i {
+    transform: scale(1.2);
+    text-shadow: 0 0 20px rgba(90, 170, 255, 0.9);
+}
+
+/* Descripción del sitio */
+.footer-description {
+    color: #b9c7ff;
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 400px;
+}
+
+/* Contenedor de enlaces de navegación */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+/* Estilo de los enlaces */
+.footer-link {
+    color: #c7d3ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Flecha decorativa antes del texto */
+.footer-link::before {
+    content: "›";
+    color: #4da3ff;
+    margin-right: 6px;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en enlaces */
+.footer-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(90,170,255,0.7);
+}
+
+.footer-link:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Separador entre secciones */
+.footer-divider {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    margin: 1rem 0;
+}
+
+/* ====== SECCIÓN INFERIOR ====== */
+.footer-bottom {
+    text-align: center;
+    padding: 1rem 0 2rem;
+    font-size: 0.85rem;
+    color: #aabaff;
+}
+
+/* Créditos de diseño */
+.footer-credits {
+    margin-top: 0.4rem;
+    color: #9fb7ff;
+    font-size: 0.9rem;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+/* Estilo de los nombres en créditos */
+.footer-credits strong {
+    color: #b6c9ff;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Efecto hover en los nombres */
+.footer-credits strong:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(77,163,255,0.8);
+}
+
+/* ====== REDES SOCIALES ====== */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin: 25px 0;
+}
+
+/* Estilo base de los íconos de redes sociales */
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background: linear-gradient(145deg, #007bff7f, #0057b35d);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efecto hover suave en íconos */
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilo personalizado para Facebook (opcional) */
+.social-icon.facebook {
+    background: linear-gradient(145deg, #3b5998, #2d4373);
+}
+
+/* ====== DISEÑO RESPONSIVO ====== */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: row;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .footer-description {
+        max-width: none;
+    }
+}

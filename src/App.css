@@ -1,0 +1,576 @@
+
+
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  --blur-effect: blur(20px);
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-light: #fff;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --background-primary: #ffffff;
+  --background-secondary: #f5f5f7;
+  --accent-color: #0071e3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* App.css - Complemento para Liquid Glass */
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    rgba(248, 248, 248, 0.95) 0%, 
+    rgba(240, 240, 240, 0.95) 50%, 
+    rgba(255, 255, 255, 0.95) 100%);
+  backdrop-filter: blur(20px);
+}
+
+ @font-face {
+  /* Le das un nombre a la fuente que usarás en font-family */
+  font-family: 'Mi Fuente Elegante'; 
+  /* La ruta a tu archivo de fuente */
+  src: url('fonts/MiFuente-Black900Italic.woff') format('woff');
+  /* Opcional: Define el peso y estilo si el archivo es solo para esa variante */
+  font-weight: 900; 
+  font-style: italic;
+}
+.fuenteV{
+  font-family: 'Mi Fuente Elegante', sans-serif;
+}
+.title-gradient-blue {
+    font-size: 4rem !important;
+    font-weight: 900!important;
+    background: linear-gradient(45deg, #1e3a8a, #3b82f6, #06b6d4, #0ea5e9, #1e3a8a)!important;
+    background-size: 300% 300%!important;
+    -webkit-background-clip: text!important;
+    background-clip: text!important;
+    -webkit-text-fill-color: transparent!important;
+    animation: gradientShift 4s ease infinite!important;
+    text-shadow: 0 0 80px rgba(59, 130, 246, 0.5)!important;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%!important; }
+    50% { background-position: 100% 50%!important; }
+}
+.title-gradient-b {
+    font-size: 3.5rem !important;
+    font-weight: 900!important;
+    background: linear-gradient(45deg, #112250, #214989, #053699, #08648e, #1e3a8a)!important;
+    background-size: 300% 300%!important;
+    -webkit-background-clip: text!important;
+    background-clip: text!important;
+    -webkit-text-fill-color: transparent!important;
+    animation: gradientShift 4s ease infinite!important;
+    text-shadow: 0 0 80px rgba(59, 130, 246, 0.5)!important;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%!important; }
+    50% { background-position: 100% 50%!important; }
+}
+
+
+
+
+/* Asegurar que el contenido principal tenga espacio */
+.Main {
+  min-height: calc(100vh - 140px); /* Ajusta según la altura de header + footer */
+  padding: 2rem 0;
+ 
+}
+#FooterPrincipal {
+  position: sticky;
+  bottom: 0;
+  z-index: -10;
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  box-shadow: 0 -10px 30px rgba(21, 101, 192, 0.2);
+}
+
+
+body {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--background-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ===== ESTILOS GLASS MORPHISM - VERSIÓN CLARA ===== */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur-effect);
+  -webkit-backdrop-filter: var(--blur-effect);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== HERO SECTION - VERSIÓN CLARA ===== */
+.hero-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.03) 0%, transparent 50%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1d1d1f 0%, #424245 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+/* Contenedor de los filtros de categoría */
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+    background-color: transparent !important; /* Elimina el color antiguo */
+}
+
+/* Estilos base para los botones de categoría */
+.category-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #c0cfdf7f 0%, #cbdef294 100%);
+    color: #495057;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+/* HOVER SUPER LLAMATIVO - Estado normal */
+.category-chip:not(.active):hover {
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    color: white !important;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 10px 30px rgba(33, 150, 243, 0.5);
+    border: 2px solid #64B5F6;
+}
+
+/* Efecto de brillo en hover */
+.category-chip:not(.active):hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.7s ease;
+}
+
+.category-chip:not(.active):hover::before {
+    left: 100%;
+}
+
+/* Estado activo del botón */
+.category-chip.active {
+    background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(21, 101, 192, 0.4);
+    border: 2px solid #42A5F5;
+}
+
+/* Badge dentro del botón */
+.category-chip .badge {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover para el badge en botones normales */
+.category-chip:not(.active):hover .badge {
+    background: linear-gradient(135deg, #42A5F5 0%, #1E88E5 100%) !important;
+    color: white !important;
+    transform: scale(1.2);
+}
+
+/* Badge en estado activo */
+.category-chip.active .badge {
+    background: rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Efecto de pulso para el botón activo */
+.category-chip.active::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #42A5F5, #96c2f4c0, #1354b579);
+    border-radius: 52px;
+    z-index: -1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+}
+
+/* Efecto al hacer click */
+.category-chip:active {
+    transform: translateY(-1px) scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .category-filters {
+        gap: 10px;
+        margin: 20px 0;
+    }
+    
+    .category-chip {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .category-chip:not(.active):hover {
+        transform: translateY(-2px) scale(1.05);
+    }
+}
+
+/* Asegurar que no haya estilos de Bootstrap interfiriendo */
+.category-chip:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* ===== NEWS GRID - VERSIÓN CLARA ===== */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 40px 0;
+}
+.news-article {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(18, 102, 205, 0.35);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🌈 Capa animada con colores ligeramente más notorios */
+.news-article::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(74, 144, 226, 0.12),
+    rgba(255, 223, 88, 0.1),
+    rgba(0, 191, 255, 0.12));
+  background-size: 300% 300%;
+  border-radius: inherit;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  animation: hueWave 9s ease-in-out infinite;
+}
+
+/* Hover */
+.news-article:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 22px 44px rgba(0, 0, 0, 0.14),
+    0 8px 22px rgba(18, 102, 205, 0.2);
+}
+
+.news-article:hover::before {
+  opacity: 1;
+}
+
+/* Imagen */
+.news-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.news-article:hover .news-image {
+  transform: scale(1.04);
+}
+
+/* Contenido */
+.news-content {
+  padding: 1.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+.news-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+  transition: color 0.5s ease;
+}
+
+.news-article:hover .news-title {
+  color: #2563eb;
+}
+
+.news-description {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* 🌊 Animación líquida más notoria */
+@keyframes hueWave {
+  0% {
+    background-position: 0% 50%;
+    background: linear-gradient(135deg,
+      rgba(74, 144, 226, 0.12),
+      rgba(255, 223, 88, 0.1),
+      rgba(0, 191, 255, 0.12));
+  }
+  50% {
+    background-position: 100% 50%;
+    background: linear-gradient(135deg,
+      rgba(0, 191, 255, 0.15),
+      rgba(255, 223, 88, 0.12),
+      rgba(18, 102, 205, 0.15));
+  }
+  100% {
+    background-position: 0% 50%;
+    background: linear-gradient(135deg,
+      rgba(74, 144, 226, 0.12),
+      rgba(255, 223, 88, 0.1),
+      rgba(0, 191, 255, 0.12));
+  }
+}
+
+
+
+.news-content {
+  padding: 28px;
+}
+
+.news-category {
+  display: inline-block;
+  background: rgba(23, 83, 172, 0.815);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.news-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.news-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.news-excerpt {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding-top: 16px;
+  border-top: 2px solid #bbcbff;
+}
+
+.read-more {
+  background: rgba(23, 83, 172, 0.815);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Efecto de barrido de color */
+.read-more::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #0a1657, #0438bcba);
+  transition: width 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+}
+
+.read-more:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(7, 23, 95, 0.4);
+  color: white;
+}
+
+.read-more:hover::before {
+  width: 100%;
+}
+/* ===== SECTIONS BACKGROUNDS ===== */
+.section-light {
+  background: var(--background-primary);
+}
+
+.section-gray {
+  background: var(--background-secondary);
+}
+.section-blue {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .hero-section {
+    min-height: 60vh;
+    text-align: center;
+  }
+  
+  .category-filters {
+    gap: 8px;
+  }
+  
+  .category-chip {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+  
+  .news-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .news-title {
+    font-size: 1.2rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+}
